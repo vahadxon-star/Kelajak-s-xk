@@ -1,0 +1,6 @@
+{
+  "name": "Kelajak-S",
+  "description": "Kelajak-S — arxitektura va interyer dizayni agentligi (2016 yildan beri). Zamonaviy va osoyishta arxitektura yechimlari.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

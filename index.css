@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root {
+  --color-dark: #0d0d0d;
+  --color-offwhite: #efeeec;
+  --color-light-section: #f4f3f0;
+  --color-muted-grey: #858380;
+  --color-muted-dark: #222222;
+  --color-muted-light: #dcdad5;
+  --color-divider-dark: rgba(255, 255, 255, 0.15);
+  --color-divider-light: rgba(0, 0, 0, 0.12);
+}
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", "Inter", ui-monospace, SFMono-Regular, monospace;
+  --color-dark: #0d0d0d;
+  --color-offwhite: #efeeec;
+  --color-light: #f4f3f0;
+  --color-divider-dark: rgba(255, 255, 255, 0.15);
+  --color-divider-light: rgba(0, 0, 0, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-dark);
+}
+
+/* Visible keyboard focus states across dark and light sections */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* Micro-labels styling */
+.micro-label {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee {
+    animation: none !important;
+  }
+}
